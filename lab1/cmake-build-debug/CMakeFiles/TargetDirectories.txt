@@ -1,0 +1,4 @@
+/home/kacper/studia/sysopy/lab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kacper/studia/sysopy/lab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kacper/studia/sysopy/lab1/cmake-build-debug/CMakeFiles/main.dir
+/home/kacper/studia/sysopy/lab1/cmake-build-debug/CMakeFiles/lab1.dir
