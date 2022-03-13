@@ -6,6 +6,7 @@
 *.ko
 *.obj
 *.elf
+*.pgm
 
 # Linker output
 *.ilk
@@ -50,6 +51,5 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-PROFILE.c
-cmake-build-debug/
-.idea/
+*.txt
+ipc

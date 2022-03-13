@@ -1,7 +1,7 @@
 static O0
 One file:
         create_table    real 0.000s  use r0.000s    sys 0.000s
-             wc_file    real 0.000s  use r0.000s    sys 0.000s
+             wc_file    real 0.010s  use r0.000s    sys 0.000s
           save_block    real 0.000s  use r0.000s    sys 0.000s
 
 allocate 100 blocks, wc 10 big_files:
@@ -11,10 +11,10 @@ allocate 100 blocks, wc 10 big_files:
 
 allocate 1500 blocks, wc many different files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.080s  use r0.000s    sys 0.000s
+            wc_files    real 0.090s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.470s  use r0.250s    sys 0.050s
+            wc_files    real 1.500s  use r0.210s    sys 0.040s
 
 static O1
 One file:
@@ -29,10 +29,10 @@ allocate 100 blocks, wc 10 big_files:
 
 allocate 1500 blocks, wc many different files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.100s  use r0.000s    sys 0.000s
+            wc_files    real 0.100s  use r0.000s    sys 0.010s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.530s  use r0.220s    sys 0.050s
+            wc_files    real 1.550s  use r0.230s    sys 0.060s
 
 static O2
 One file:
@@ -50,7 +50,7 @@ allocate 1500 blocks, wc many different files:
             wc_files    real 0.100s  use r0.000s    sys 0.010s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.530s  use r0.240s    sys 0.060s
+            wc_files    real 1.550s  use r0.230s    sys 0.030s
 
 static O3
 One file:
@@ -68,7 +68,7 @@ allocate 1500 blocks, wc many different files:
             wc_files    real 0.100s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.540s  use r0.230s    sys 0.040s
+            wc_files    real 1.550s  use r0.230s    sys 0.070s
 
 static Ofast
 One file:
@@ -78,38 +78,20 @@ One file:
 
 allocate 100 blocks, wc 10 big_files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.000s  use r0.000s    sys 0.000s
+            wc_files    real 0.010s  use r0.000s    sys 0.000s
           save_block    real 0.000s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc many different files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.100s  use r0.000s    sys 0.000s
+            wc_files    real 0.100s  use r0.000s    sys 0.010s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.520s  use r0.210s    sys 0.060s
+            wc_files    real 1.550s  use r0.220s    sys 0.050s
 
 static Os
 One file:
         create_table    real 0.000s  use r0.000s    sys 0.000s
              wc_file    real 0.000s  use r0.000s    sys 0.000s
-          save_block    real 0.000s  use r0.000s    sys 0.000s
-
-allocate 100 blocks, wc 10 big_files:
-            allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.000s  use r0.000s    sys 0.000s
-          save_block    real 0.000s  use r0.000s    sys 0.000s
-
-allocate 1500 blocks, wc many different files:
-            allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.100s  use r0.000s    sys 0.000s
-
-allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.520s  use r0.250s    sys 0.050s
-
-shared O0
-One file:
-        create_table    real 0.000s  use r0.000s    sys 0.000s
-             wc_file    real 0.010s  use r0.000s    sys 0.000s
           save_block    real 0.000s  use r0.000s    sys 0.000s
 
 allocate 100 blocks, wc 10 big_files:
@@ -122,7 +104,25 @@ allocate 1500 blocks, wc many different files:
             wc_files    real 0.100s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.570s  use r0.230s    sys 0.050s
+            wc_files    real 1.530s  use r0.230s    sys 0.060s
+
+shared O0
+One file:
+        create_table    real 0.000s  use r0.000s    sys 0.000s
+             wc_file    real 0.000s  use r0.000s    sys 0.000s
+          save_block    real 0.000s  use r0.000s    sys 0.000s
+
+allocate 100 blocks, wc 10 big_files:
+            allocate    real 0.000s  use r0.000s    sys 0.000s
+            wc_files    real 0.000s  use r0.000s    sys 0.000s
+          save_block    real 0.000s  use r0.000s    sys 0.000s
+
+allocate 1500 blocks, wc many different files:
+            allocate    real 0.000s  use r0.000s    sys 0.000s
+            wc_files    real 0.100s  use r0.000s    sys 0.000s
+
+allocate 1500 blocks, wc loads of files:
+            wc_files    real 1.580s  use r0.230s    sys 0.050s
 
 shared O1
 One file:
@@ -137,10 +137,10 @@ allocate 100 blocks, wc 10 big_files:
 
 allocate 1500 blocks, wc many different files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.100s  use r0.000s    sys 0.000s
+            wc_files    real 0.110s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.510s  use r0.230s    sys 0.060s
+            wc_files    real 1.560s  use r0.210s    sys 0.060s
 
 shared O2
 One file:
@@ -155,10 +155,10 @@ allocate 100 blocks, wc 10 big_files:
 
 allocate 1500 blocks, wc many different files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.100s  use r0.000s    sys 0.000s
+            wc_files    real 0.100s  use r0.000s    sys 0.010s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.510s  use r0.260s    sys 0.050s
+            wc_files    real 1.460s  use r0.230s    sys 0.060s
 
 shared O3
 One file:
@@ -173,28 +173,28 @@ allocate 100 blocks, wc 10 big_files:
 
 allocate 1500 blocks, wc many different files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.090s  use r0.010s    sys 0.010s
+            wc_files    real 0.100s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.600s  use r0.230s    sys 0.060s
+            wc_files    real 1.540s  use r0.230s    sys 0.050s
 
 shared Ofast
 One file:
         create_table    real 0.000s  use r0.000s    sys 0.000s
-             wc_file    real 0.010s  use r0.000s    sys 0.000s
+             wc_file    real 0.000s  use r0.000s    sys 0.000s
           save_block    real 0.000s  use r0.000s    sys 0.000s
 
 allocate 100 blocks, wc 10 big_files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.010s  use r0.000s    sys 0.000s
+            wc_files    real 0.000s  use r0.000s    sys 0.000s
           save_block    real 0.000s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc many different files:
             allocate    real 0.000s  use r0.000s    sys 0.000s
-            wc_files    real 0.120s  use r0.000s    sys 0.000s
+            wc_files    real 0.100s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.480s  use r0.220s    sys 0.050s
+            wc_files    real 1.550s  use r0.250s    sys 0.060s
 
 shared Os
 One file:
@@ -212,5 +212,5 @@ allocate 1500 blocks, wc many different files:
             wc_files    real 0.100s  use r0.000s    sys 0.000s
 
 allocate 1500 blocks, wc loads of files:
-            wc_files    real 1.520s  use r0.250s    sys 0.060s
+            wc_files    real 1.520s  use r0.240s    sys 0.030s
 

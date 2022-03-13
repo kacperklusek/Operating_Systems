@@ -13,7 +13,7 @@ all: static
 shared: library.c main.c
 	$(CC) -c -fPIC library.c
 	$(CC) -shared -fPIC -o library.so library.o
-	$(CC) $(CFLAGS) ./main.c -L. -llibrary -D -I. TIMING -o main
+	$(CC) $(CFLAGS) ./main.c -L. -llibrary -D TIMING -o main
 
 # build static library
 static: main.c library.c
@@ -28,7 +28,7 @@ dynamic:
 	$(CC) $(CFLAGS) ./main.c -ldl -D LIB_DYNAMIC -D TIMING -o main
 
 
-test:
+raport3b: static shared
 	rm -f $(FILENAME)
 
 	for imprt in static shared ; do \
