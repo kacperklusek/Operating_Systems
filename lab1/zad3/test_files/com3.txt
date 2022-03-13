@@ -1,0 +1,54 @@
+start_timer
+create_table 1500
+stop_timer allocate
+start_timer
+wc_files ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/medium_1.txt ./test_files/medium_2.txt ./test_files/medium_3.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_1.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_3.txt ./test_files/big_2.txt ./test_files/big_2.txt ./test_files/big_2.txt
+stop_timer wc_files
+

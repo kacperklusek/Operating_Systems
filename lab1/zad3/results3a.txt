@@ -1,0 +1,16 @@
+One file:
+        create_table    real 0.000s  use r0.000s    sys 0.000s
+             wc_file    real 0.000s  use r0.000s    sys 0.000s
+          save_block    real 0.000s  use r0.000s    sys 0.000s
+
+allocate 100 blocks, wc 10 big_files:
+            allocate    real 0.000s  use r0.000s    sys 0.000s
+            wc_files    real 0.010s  use r0.000s    sys 0.000s
+          save_block    real 0.000s  use r0.000s    sys 0.000s
+
+allocate 1500 blocks, wc many different files:
+            allocate    real 0.000s  use r0.000s    sys 0.000s
+            wc_files    real 0.100s  use r0.000s    sys 0.000s
+
+allocate 1500 blocks, wc loads of files:
+            wc_files    real 1.570s  use r0.240s    sys 0.030s
