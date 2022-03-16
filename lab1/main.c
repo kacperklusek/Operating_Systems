@@ -6,7 +6,7 @@
 #ifdef LIB_DYNAMIC
     #include <dlfcn.h>
 #else
-    #include "library.h"
+    #include "library.c"
 #endif
 
 #ifdef TIMING
@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
     }
 
     regex_t re;
-    int ret = regcomp(&re, "[/a-zA-Z0-9._-]+[.][a-zA-Z0-9._-]+", REG_EXTENDED);
+    int ret = regcomp(&re, "[/a-zA -Z0-9._-]+[.][a-zA-Z0-9._-]+", REG_EXTENDED);
     if (ret != 0) {
         char errmsg[256];
         regerror(ret, &re, errmsg, sizeof(errmsg));
@@ -114,6 +114,7 @@ int main(int argc, char **argv) {
                 strcat(paths, argv[start]);
                 strcat(paths, " ");
             }
+            printf("%s", paths);
 
             file = wc_files(paths);
         }

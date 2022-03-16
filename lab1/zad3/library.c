@@ -30,9 +30,7 @@ FILE* wc_files(char* paths) {
     char prev[var_size];
 
     fp = popen(command, "r");
-    // that condition may seem crazy ... and it is! but fgets() does not return NULL od EOF
-    // at the end of the file, so I must have done this...
-//    while (fgets(var, sizeof(var), fp) && strcmp(var, prev)) {
+
     while (fgets(var, var_size, fp) != NULL){
         strcpy(prev, var);
         fprintf(outputfile, "%s", var);
