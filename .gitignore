@@ -53,3 +53,5 @@ dkms.conf
 PROFILE.c
 cmake-build-debug/
 .idea/
+
+sysopy-master
