@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.21)
-project(lab2)
+project(lab2_ C)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 99)
 
-add_executable(lab2 copy_clean.c)
-add_executable(lab2 char_count.c)
+add_executable(lab2 main.c)
+
+

@@ -1,0 +1,6 @@
+  SYS copy functions    real 0.020s  use r0.020s    sys 0.000s
+  LIB copy functions    real 0.020s  use r0.010s    sys 0.000s
+
+
+ SYS count functions    real 0.720s  use r0.070s    sys 0.000s
+ LIB count functions    real 0.030s  use r0.030s    sys 0.000s

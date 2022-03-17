@@ -7,6 +7,35 @@
 #include "stdlib.h"
 
 
+#ifdef TIMING
+#include <unistd.h>
+#include <sys/times.h>
+clock_t clock_start, clock_stop;
+struct tms times_start_buff, times_end_buff;
+
+void start_timer() {
+    clock_start = times(&times_start_buff);
+}
+
+void stop_timer() {
+    clock_stop = times(&times_end_buff);
+}
+
+double calc_time(clock_t start, clock_t end) {
+    return (double) (end - start) / (double) sysconf(_SC_CLK_TCK);
+}
+
+void print_times(char* op_name) {
+    printf("%20s    real %.3fs  use r%.3fs    sys %.3fs\n",
+           op_name,
+           calc_time(clock_start, clock_stop),
+           calc_time(times_start_buff.tms_utime, times_end_buff.tms_utime),
+           calc_time(times_start_buff.tms_cstime, times_end_buff.tms_cstime));
+}
+#endif
+
+
+
 // returns 0 if is newline else 1;
 int is_newline(char c) {
     if (c != ' ' && c!= '\t' && isspace(c)) {
@@ -157,8 +186,21 @@ int main(int argc, char** argv) {
         exit(1);
     }
 
+    #ifdef TIMING
+    start_timer();
     sys_del_ws(argv[1], argv[2]);
+    stop_timer();
+    print_times("SYS copy functions");
+
+
+    start_timer();
     lib_del_ws(argv[1], argv[2]);
+    stop_timer();
+    print_times("LIB copy functions");
+
+    #endif
+
+
 
 
     return 0;
