@@ -1,0 +1,28 @@
+using opendir, readdir
+path                                                                       hl  file type  size         last access date      last modification date
+/home/kacper/studia/sysopy/lab2/zad3/tree/something.txt                    1   slink      13           2022-03-17 14:46:23   2022-03-17 14:46:20   
+/home/kacper/studia/sysopy/lab2/zad3/tree/something.txt                    1   file       10           2022-03-17 14:43:21   2022-03-17 13:19:29   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1                           4   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1/file_in_dir1_1            1   file       6            2022-03-17 14:43:23   2022-03-17 13:21:42   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1/dir2_2                    2   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1/dir2_1                    2   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2                           3   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/file_in_dir1_2            1   file       8            2022-03-17 14:43:23   2022-03-17 13:22:10   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/dir3_1                    2   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/dir3_1/file.txt           1   file       8            2022-03-17 14:43:21   2022-03-17 13:22:34   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/dir3_1/anthr_fl_in_dir3_1 1   file       8            2022-03-17 14:43:23   2022-03-17 13:23:17   
+
+using nftw
+path                                                                       hl  file type  size         last access date      last modification date
+/home/kacper/studia/sysopy/lab2/zad3/tree                                  4   dir        4096         2022-03-17 14:46:23   2022-03-17 14:46:20   
+/home/kacper/studia/sysopy/lab2/zad3/tree/something.txt                    1   slink      13           2022-03-17 14:46:23   2022-03-17 14:46:20   
+/home/kacper/studia/sysopy/lab2/zad3/tree/something.txt                    1   file       10           2022-03-17 14:43:21   2022-03-17 13:19:29   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1                           4   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1/file_in_dir1_1            1   file       6            2022-03-17 14:43:23   2022-03-17 13:21:42   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1/dir2_2                    2   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_1/dir2_1                    2   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2                           3   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/file_in_dir1_2            1   file       8            2022-03-17 14:43:23   2022-03-17 13:22:10   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/dir3_1                    2   dir        4096         2022-03-17 14:43:21   2022-03-17 14:43:21   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/dir3_1/file.txt           1   file       8            2022-03-17 14:43:21   2022-03-17 13:22:34   
+/home/kacper/studia/sysopy/lab2/zad3/tree/dir1_2/dir3_1/anthr_fl_in_dir3_1 1   file       8            2022-03-17 14:43:23   2022-03-17 13:23:17   
