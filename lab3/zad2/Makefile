@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS= -Wall
 
-RAPORTNAME = raport.txt
+RAPORT_NAME = raport.txt
 ARGS = 0.00003
 
 all:
@@ -12,4 +12,7 @@ main: main.c
 
 raport: main
 	rm -f $(RAPORTNAME)
-	./main $(ARGS) >> $(RAPORTNAME)
+	./main $(ARGS) >> $(RAPORT_NAME)
+
+clean:
+	rm -f *.o *.a main $(RAPORT_NAME) res/*
