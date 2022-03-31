@@ -1,14 +1,8 @@
 CC=gcc
 CFLAGS= -Wall
 
-RAPORTNAME = raport2.txt
-ARG1 = ignore
-ARG2 = handler
-ARG3 = mask
-ARG4 = pending
-
 all:
-	make main sender catcher
+	make main catcher sender
 
 main: main.c
 	$(CC) $(CFLAGS) main.c -o main
@@ -20,7 +14,7 @@ sender: sender.c
 	$(CC) $(FLAGS) sender.c -o sender
 
 test: main catcher sender
-	./main KILL 1000
+	./main SIGRT 1000
 
 clean:
-	rm -f main $(RAPORTNAME) *.o *.a
+	rm -f main catcher sender $(RAPORTNAME) *.o *.a

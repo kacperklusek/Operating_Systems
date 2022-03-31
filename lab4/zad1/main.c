@@ -116,11 +116,11 @@ int main(int argc, char** argv) {
         char* args[2] = {"main", "exec-pending"};
         // https://i.stack.imgur.com/RmfZk.jpg
         fflush(stdout);
-        if (fork() == 0) {
+//        if (fork() == 0) {
             execvp("./main", args);
-            exit(0);
-        }
-        wait(0);
+//            exit(0);
+//        }
+//        wait(0);
     }
     else if(strcmp(command, "exec-ignore") == 0) {
         raise(SIGUSR1);
@@ -139,6 +139,8 @@ int main(int argc, char** argv) {
         sigpending(&set);
         if (! sigismember(&set, SIGUSR1) ) {
             puts("parent's SIGUSR1 is not pending in exec child process");
+        } else {
+            puts("parent's SIGUSR1 IS pending in exec child process");
         }
     }
 }

@@ -8,19 +8,13 @@ ARG3 = mask
 ARG4 = pending
 
 all:
-	make main sender catcher
+	make main
 
 main: main.c
 	$(CC) $(CFLAGS) main.c -o main
 
-catcher: catcher.c
-	$(CC) $(FLAGS) catcher.c -o catcher
-
-sender: sender.c
-	$(CC) $(FLAGS) sender.c -o sender
-
-test: main catcher sender
-	./main KILL 1000
+test: main
+	./main
 
 clean:
 	rm -f main $(RAPORTNAME) *.o *.a
