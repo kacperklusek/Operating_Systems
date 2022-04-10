@@ -1,3 +1,2 @@
 cat /etc/passwd | wc -l
-ls | grep a | sort -n
-ls | grep m | sort -n
+

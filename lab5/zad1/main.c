@@ -103,7 +103,7 @@ void handle_line(char* cmd_in) {
         cmd = strtok(NULL, "|");
     }
 
-    pid_t pid = fork();
+    pid_t pid = fork();     // może tego forka do ifa wrzucic ?
     if (pid == 0) { // gówniarz
         handle_commands(cmds, n_args);
         exit(0);

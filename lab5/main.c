@@ -5,6 +5,8 @@
 #include <wait.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <sys/stat.h>
+#include <errno.h>
 
 #define BUFF_SIZE 512
 #define MAIL_CMD_SIZE 128
@@ -15,37 +17,39 @@
 
 
 int main(int argc, char* argv[]) {
-    if (argc == 2)
-    {
-        char* key = argv[1];
-        char command[10] = "sort -k ";
-        if (strcmp(key, "nadawca") == 0) { strcat(command, "2"); }
-        if (strcmp(key, "data") == 0) { strcat(command, "3"); }
-        FILE *sort_input = popen(command, "w");
-        FILE *mail_output = popen("mailq", "r");
-        char buff[BUFF_SIZE];
-        while(fgets(buff, sizeof(buff), mail_output) != NULL){
-            fputs(buff, sort_input);
+    const char* fifoname = "./fifo_pipe";
+    const int PROD_NUM = 2;
+
+    if (mkfifo(fifoname, 0666) == -1) {
+        printf("mkfifo error %d\n", errno);
+        return 1;
+    }
+
+    if (fork() == 0) {
+        if (execlp("./consumer", "./consumer", fifoname, "out_file.txt", "30", (char *) NULL) == -1) {
+            printf("ERROR consumer [%d]\n", errno);
         }
-        pclose(mail_output);
-        pclose(sort_input);
-
+        exit(0);
     }
-    else if (argc == 4)
-    {
-        char* email_address = argv[1];
-        char* title = argv[2];
-        char* message = argv[3];
 
-        char commmand[MAIL_CMD_SIZE] = "mail -s ";
-        strcat(strcat(strcat(commmand, "'"), title), "' ");
-        strcat(strcat(strcat(commmand, "'"), email_address), "' ");
-
-        FILE *mail_input = popen(commmand, "w");
-        fputc('"', mail_input);
-        fputs(message, mail_input);
-        fputc('"', mail_input);
-        pclose(mail_input);
+    char buf[16];
+    char num[3];
+    for(int i = 0; i < PROD_NUM; ++i){
+        sprintf(buf, "prod%d.txt", i+1);
+        sprintf(num, "%d", i+1);
+        if(fork() == 0){
+            if (execlp("./producer", "./producer", fifoname, num, buf, "30", (char *) 0) == -1) {
+                printf("ERROR producer [%d]\n", errno);
+            }
+            exit(0);
+        }
     }
+
+    for (int i = 0; i < PROD_NUM+1; ++i) {
+        wait(0);
+    }
+
+    puts("end");
+
     return 0;
 }
