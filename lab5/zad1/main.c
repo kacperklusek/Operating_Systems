@@ -45,8 +45,8 @@ void handle_commands(char** cmds, int n_of_cmds) {
             exit(EXIT_FAILURE);
         }
 
-        pid_t cp = fork();
-        if (cp == 0) { // gówniarz
+//        pid_t cp = fork();
+        if (fork() == 0) { // gówniarz
             char **args = parse_args(cmds[i]);
 
             if (i != n_of_cmds - 1) {
@@ -57,16 +57,14 @@ void handle_commands(char** cmds, int n_of_cmds) {
                 close(pipes[(i + 1) % 2][WRITE_PIPE]);
                 dup2(pipes[(i + 1) %2][READ_PIPE], STDIN_FILENO);
             }
-//            printf("executing %s\n", args[0]);
             execvp(args[0], args);
 
             exit(EXIT_SUCCESS);
         }
     }
+    wait(0);
     close(pipes[i % 2][READ_PIPE]);
     close(pipes[i % 2][WRITE_PIPE]);
-    wait(0);
-    exit(0);
 }
 
 char *trim_end(char* s) {
@@ -81,7 +79,6 @@ char *trim_end(char* s) {
 void handle_line(char* cmd_in) {
     char cmdln[MAX_CMD_LEN];
     strcpy(cmdln, cmd_in);
-    printf("SIEMAAAAAAAAAAAAAAAAAAAAAAAA\n %s\n", cmdln);
     int n_args = 1;
     char *c = trim_end(cmdln);
     while (*c != '\0') {
@@ -103,12 +100,12 @@ void handle_line(char* cmd_in) {
         cmd = strtok(NULL, "|");
     }
 
-    pid_t pid = fork();     // może tego forka do ifa wrzucic ?
-    if (pid == 0) { // gówniarz
+    if (fork() == 0) { // gówniarz
         handle_commands(cmds, n_args);
         exit(0);
     }
-    waitpid(pid, NULL, 0);
+//    waitpid(pid, NULL, 0);
+    wait(0);
 
     for (int i = 0; i < n_args; ++i) {
         free(cmds[i]);
@@ -131,6 +128,10 @@ int main(int argc, char* argv[]) {
 
     char buffer[MAX_CMD_LEN];
     while(fgets(&buffer[0], sizeof(buffer), commands_file) != NULL){
+        if (strcmp(buffer, "\n") == 0 || strcmp(buffer, " ") == 0 || strcmp(buffer, "") == 0 || strlen(&buffer[0]) < 2){
+            break;
+        }
+        printf("\n");
         handle_line(&buffer[0]);
     }
 

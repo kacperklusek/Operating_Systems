@@ -1,2 +1,5 @@
 cat /etc/passwd | wc -l
+ls | grep a | sort -n
+ls | grep ma | sort -n
 
+nowa linia musi tu być bo sie psuje

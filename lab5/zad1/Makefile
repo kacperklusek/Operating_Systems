@@ -7,7 +7,7 @@ all:
 main: main.c
 	$(CC) $(CFLAGS) main.c -o main
 
-test: ../main
+test: ./main
 	./main commands.txt
 
 clean:
