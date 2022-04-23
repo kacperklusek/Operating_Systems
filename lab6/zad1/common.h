@@ -77,6 +77,5 @@ const char *TaskTypeStr[LAST_TYPE] = {
         "TOALL",
         "TOONE",
         "STOP"
-        "TEXT"
 };
 

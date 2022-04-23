@@ -17,15 +17,16 @@ static int server_queue_id;
 int active = 0;
 int finished = 0;
 ClientData clients[MAX_NO_CLIENTS];
-char * curr_time = "czas";
+char * curr_time;
 time_t now;
 
 
 void get_time() {
-//    time(&now);
-//    puts("before sprintf");
-//    sprintf(&curr_time[0], "%s", ctime(&now));
-//    puts("after sprintf");
+    struct tm * timeinfo;
+    time (&now);
+    timeinfo = localtime(&now);
+    strcpy(curr_time, asctime(timeinfo));
+    curr_time[24] = ' ';
 }
 
 void log_to_file(Message* msg) {
@@ -34,7 +35,9 @@ void log_to_file(Message* msg) {
     get_time();
     snprintf(line, 100, "%s | client_index: %d | %s",
              curr_time, msg->index, TaskTypeStr[msg->type]);
-    fwrite(line, sizeof (line), sizeof (char), log);
+    fwrite(line, strlen(line), sizeof (char), log);
+    fputc('\n', log);
+    fclose(log);
 }
 
 int get_free_index() {
@@ -65,11 +68,9 @@ void handle_message(Message* message) {
                 perror("msgget INIT");
                 return;
             }
-            puts("Received INIT");
 
             Message m = {.type = INIT};
             int free_client_index = get_free_index();
-            printf("FREE INDEX: %d", free_client_index);
 
             if (free_client_index == -1) { // no available places
                 sprintf(&m.text[0], "%d", -1);
@@ -202,7 +203,7 @@ void listen() {
 
 int main(int argc, char** argv) {
     signal(SIGINT, end);
-
+    curr_time = calloc(24, sizeof (char));
     server_queue_id = create_msg_queue(SERVER_KEY_PATH, PROJECT_ID, IPC_CREAT);
     listen();
 
