@@ -57,11 +57,9 @@ void end() {
 void handle_message(Message* message) {
     int client_idx = message->index;
     log_to_file(message);
-    puts("HANDLING MESSAGE");
 
     switch (message->type) {
         case INIT: {
-            puts("in init");
             int msgid;
             if ((msgid = msgget((key_t) client_idx, PERMISSIONS)) == -1) {
                 perror("msgget INIT");
@@ -111,7 +109,7 @@ void handle_message(Message* message) {
             len += snprintf(&m.text[len], MAX_MSG_LEN, "You\t%d\n", clients[client_idx].index);
             for (int i = 0; i < MAX_NO_CLIENTS; ++i) {
                 if (clients[i].status == CONNECTED && client_idx != i) {
-                    len += snprintf(&m.text[len], MAX_MSG_LEN - len, "You\t%d\n", clients[i].index);
+                    len += snprintf(&m.text[len], MAX_MSG_LEN - len, " -\t%d\n", clients[i].index);
                 }
             }
 
@@ -127,7 +125,7 @@ void handle_message(Message* message) {
                    clients[client_idx].que_id);
             Message m = {.type = TOALL, .index = client_idx};
             get_time();
-            snprintf(m.text, MAX_MSG_LEN, "(from %d on \t%s): \t %s",
+            snprintf(m.text, MAX_MSG_LEN, "(from %d on %s): \t %s",
                      client_idx, curr_time, message->text);
 
             for (int i = 0; i < MAX_NO_CLIENTS; ++i) {
@@ -147,7 +145,7 @@ void handle_message(Message* message) {
             Message m = {.type = TOONE, .index = client_idx};
             int target_index = message->to_index;
             get_time();
-            snprintf(&m.text[0], MAX_MSG_LEN, "(from %d on \t%s): \t %s",
+            snprintf(&m.text[0], MAX_MSG_LEN, "(from %d on %s): \t %s",
                      client_idx, curr_time, message->text);
 
             if (clients[target_index].status == NOT_CONNECTED) {
