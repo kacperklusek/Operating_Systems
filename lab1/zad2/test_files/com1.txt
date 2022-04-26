@@ -1,9 +1,0 @@
-start_timer
-create_table 1
-stop_timer create_table
-start_timer
-wc_files ./test_files/small_1.txt
-stop_timer wc_file
-start_timer
-save_block
-stop_timer save_block

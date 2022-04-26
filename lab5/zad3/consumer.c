@@ -28,11 +28,21 @@ int main(int argc, char* argv[]) {
     };
     char buff[buff_size];
     int row_number;
+    int highest_num = 0;
+    char* message_char;
 
     while (fgets(buff, buff_size, prod_pipe) != NULL) {
         sscanf(buff, "%d", &row_number);
-        fputs(buff, out_file);
+        if (highest_num < row_number) highest_num = row_number;
+
+        message_char = &buff[2];
+//        while (*message_char != '\n') {
+        fputs(message_char, out_file);
+//            message_char++;
+//        }
     }
+
+
 
     fclose(prod_pipe);
     fclose(out_file);
