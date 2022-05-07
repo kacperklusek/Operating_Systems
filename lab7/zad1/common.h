@@ -36,17 +36,6 @@ struct sembuf add_pizza_to_deliver = {TO_DELIVER, 1, 0};
 struct sembuf mem_lock = {MEMORY_LOCK, -1, 0};
 struct sembuf mem_unlock = {MEMORY_LOCK, 1, IPC_NOWAIT};
 
-//typedef enum {
-//    NONE = 0,
-//    BAKED,
-//    ON_TABLE
-//} PizzaStatus;
-
-//typedef struct {
-//    int pizza_type;
-////    PizzaStatus status;
-//} Pizza;
-
 typedef struct {
     int o_pizzas_num;
     int o_start_index;

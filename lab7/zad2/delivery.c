@@ -1,32 +1,48 @@
 #include "common.h"
 
+sem_t *semaphores[4];
+pizzas_mem *smem;
+int running = 1;
+
+void open_resources(){
+    semaphores[AVAILABLE_PLACES_OVEN] = sem_open(SEM_AVAILABLE_PLACES_OVEN, O_RDWR);
+    semaphores[AVAILABLE_PLACES_TABLE] = sem_open(SEM_AVAILABLE_PLACES_TABLE, O_RDWR);
+    semaphores[TO_DELIVER] = sem_open(SEM_TO_DELIVER, O_RDWR);
+    semaphores[MEMORY_LOCK] = sem_open(SEM_MEMORY_LOCK, O_RDWR);
+    int sh_mem_id = shm_open(SHARED_MEMORY_NAME, O_RDWR, PERMISSIONS);
+    smem = mmap(
+            NULL,
+            sizeof (pizzas_mem),
+            PROT_READ|PROT_WRITE,
+            MAP_SHARED,
+            sh_mem_id,
+            0);
+}
+
+void close_semaphores(){
+    running = 0;
+}
+
 int main(int argc, char ** argv){
     srand(time(NULL) + getpid());
-    key_t sem_key = ftok(getenv("HOME"), SEMAPHORE_PROJECT_ID);
-    int semaphore_id = semget(sem_key, 0, PERMISSIONS);
-
-    sem_key = ftok(getenv("HOME"), MEMORY_PROJECT_ID);
-    int sh_memory_id = shmget(sem_key, 0, PERMISSIONS);
+    open_resources();
+    signal(SIGINT, close_semaphores);
 
     long ms;
     time_t s;
     int pizza_type;
     int p_index;
-    while(1 == 1){
+    while(running == 1){
         int uloc = 0;
-        pizzas_mem *smem = shmat(sh_memory_id, NULL, 0);
 
-        semop(semaphore_id, (struct sembuf[3]) {deliver_pizza, get_pizza_from_table ,mem_lock},
-                3);
+        sem_wait(semaphores[TO_DELIVER]);
+        sem_wait(semaphores[MEMORY_LOCK]);
+        sem_post(semaphores[AVAILABLE_PLACES_TABLE]);
         for (int i = smem->t_start_index; i < smem->t_start_index + smem->t_pizzas_num; ++i) {
             p_index = i % TABLE_CAPACITY;
-//            sleep(1);
             if (smem->table[p_index] > 9 || smem->table[p_index] < 0) {
-//                printf("pizza %d not on table %d start_index: %d ; pizzas_num: %d\n", smem->pizzas[p_index].pizza_type,
-//                       smem->pizzas[p_index].status == NONE, smem->start_index, smem->pizzas_num);
-                printf("Error!!\n");
+                printf("ERROR");
                 continue;
-//                exit(EXIT_FAILURE);
             }
 
             pizza_type = smem->table[p_index];
@@ -38,7 +54,7 @@ int main(int argc, char ** argv){
             printf("(%d %d.%03ld) Pobieram pizze: %d. Liczba pizz na stole: %d\n",
                    getpid(), (int) s, ms, pizza_type,
                    smem->t_pizzas_num);
-            semop(semaphore_id, (struct sembuf[1]) {mem_unlock}, 1);
+            sem_post(semaphores[MEMORY_LOCK]);
 
             sleep( 4);
 
@@ -51,8 +67,15 @@ int main(int argc, char ** argv){
             break; // gotta take one by one to ensure sync via semaphores
         }
         if (uloc == 0) {
-            semop(semaphore_id, (struct sembuf[1]) {mem_unlock}, 1);
+            sem_post(semaphores[MEMORY_LOCK]);
         }
-        shmdt(smem);
     }
+
+    for (int i = 0; i < 4; ++i) {
+        sem_close(semaphores[i]);
+    }
+
+    munmap(smem, sizeof (pizza_type));
+
+    return 0;
 }
