@@ -1,0 +1,92 @@
+Inverting image with 1 threads using mode: numbers 
+Thread 0 returned 2137 microseconds
+Main thread took 2348 microseconds
+
+Inverting image with 1 threads using mode: block 
+Thread 0 returned 3448 microseconds
+Main thread took 3990 microseconds
+
+Inverting image with 2 threads using mode: numbers 
+Thread 0 returned 1066 microseconds
+Thread 1 returned 1093 microseconds
+Main thread took 1320 microseconds
+
+Inverting image with 2 threads using mode: block 
+Thread 0 returned 1726 microseconds
+Thread 1 returned 1277 microseconds
+Main thread took 1872 microseconds
+
+Inverting image with 4 threads using mode: numbers 
+Thread 0 returned 594 microseconds
+Thread 1 returned 426 microseconds
+Thread 2 returned 602 microseconds
+Thread 3 returned 421 microseconds
+Main thread took 991 microseconds
+
+Inverting image with 4 threads using mode: block 
+Thread 0 returned 406 microseconds
+Thread 1 returned 623 microseconds
+Thread 2 returned 640 microseconds
+Thread 3 returned 302 microseconds
+Main thread took 1309 microseconds
+
+Inverting image with 8 threads using mode: numbers 
+Thread 0 returned 285 microseconds
+Thread 1 returned 268 microseconds
+Thread 2 returned 171 microseconds
+Thread 3 returned 250 microseconds
+Thread 4 returned 244 microseconds
+Thread 5 returned 255 microseconds
+Thread 6 returned 179 microseconds
+Thread 7 returned 337 microseconds
+Main thread took 586 microseconds
+
+Inverting image with 8 threads using mode: block 
+Thread 0 returned 260 microseconds
+Thread 1 returned 343 microseconds
+Thread 2 returned 550 microseconds
+Thread 3 returned 343 microseconds
+Thread 4 returned 405 microseconds
+Thread 5 returned 237 microseconds
+Thread 6 returned 391 microseconds
+Thread 7 returned 549 microseconds
+Main thread took 874 microseconds
+
+Inverting image with 16 threads using mode: numbers 
+Thread 0 returned 186 microseconds
+Thread 1 returned 180 microseconds
+Thread 2 returned 162 microseconds
+Thread 3 returned 185 microseconds
+Thread 4 returned 182 microseconds
+Thread 5 returned 185 microseconds
+Thread 6 returned 257 microseconds
+Thread 7 returned 253 microseconds
+Thread 8 returned 184 microseconds
+Thread 9 returned 180 microseconds
+Thread 10 returned 157 microseconds
+Thread 11 returned 162 microseconds
+Thread 12 returned 179 microseconds
+Thread 13 returned 167 microseconds
+Thread 14 returned 198 microseconds
+Thread 15 returned 174 microseconds
+Main thread took 939 microseconds
+
+Inverting image with 16 threads using mode: block 
+Thread 0 returned 220 microseconds
+Thread 1 returned 236 microseconds
+Thread 2 returned 338 microseconds
+Thread 3 returned 401 microseconds
+Thread 4 returned 227 microseconds
+Thread 5 returned 242 microseconds
+Thread 6 returned 339 microseconds
+Thread 7 returned 415 microseconds
+Thread 8 returned 338 microseconds
+Thread 9 returned 432 microseconds
+Thread 10 returned 210 microseconds
+Thread 11 returned 412 microseconds
+Thread 12 returned 478 microseconds
+Thread 13 returned 297 microseconds
+Thread 14 returned 437 microseconds
+Thread 15 returned 279 microseconds
+Main thread took 1061 microseconds
+
