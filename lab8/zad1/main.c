@@ -175,7 +175,11 @@ int main(int argc, char** argv){
     };
     for (int i = 0; i < n_of_threads; ++i) {
         tids[i] = i;
-        pthread_create(threads + i, NULL, (void *(*)(void *)) mode_function[threading_mode], (void *)(tids + i));
+        pthread_create(
+                threads + i,
+                NULL,
+                (void *(*)(void *)) mode_function[threading_mode],
+                (void *)(tids + i));
     }
 
     long ret_time;
